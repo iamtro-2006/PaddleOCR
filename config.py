@@ -8,7 +8,7 @@ class CFG:
     folder_path_out = r"/root/res/V3C"
 
     # BUILDLOADER PARAMETERS
-    batch_size = 16 
+    batch_size = 24 
     num_workers = 0
 
     # PADDLEOCR PARAMETERS 
@@ -21,4 +21,4 @@ class CFG:
     device="cpu"
 
     # VISUALIZATION OPTIONS
-    visualized = False
+    visualized = True
