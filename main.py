@@ -13,13 +13,13 @@ from modules import build_loader, collate_fn
 def main():
     folder = Path(CFG.folder_path_in)
 
-    model = PaddleOCR(ocr_version="PP-OCRv5",
-                      text_detection_model_name="PP-OCRv5_mobile_det",
-                      text_recognition_model_name="PP-OCRv5_mobile_rec",
-                      use_doc_orientation_classify=False,
-                      use_doc_unwarping=False,
-                      use_textline_orientation=False,
-                      device="cpu",
+    model = PaddleOCR(ocr_version=CFG.ocr_version,
+                      text_detection_model_name=CFG.text_detection_model_name,
+                      text_recognition_model_name=CFG.text_recognition_model_name,
+                      use_doc_orientation_classify=CFG.use_doc_orientation_classify,
+                      use_doc_unwarping=CFG.use_doc_unwarping,
+                      use_textline_orientation=CFG.use_textline_orientation,
+                      device=CFG.device,
                     )
     
     for image_dir in tqdm(sorted(folder.iterdir()), desc="Folder Processing"):
